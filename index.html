@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="C:\Users\18673\Documents\COMP1536\Zombie\css\style.css">   
+<link rel="stylesheet" type="text/css" href="css\style.css">   
 </head>
 <body>
 
@@ -14,13 +14,15 @@
     <p> Reset </p>
 </div>
 
-<img id = 'greaserZombie' src="C:\Users\18673\Documents\COMP1536\Zombie\images\greaserZombie.png" >
-<img id = 'fire' scr="C:\Users\18673\Documents\COMP1536\Zombie\images\fire.png" onclick="shootZombie()">
+<img id = 'greaserZombie' src="images\greaserZombie.png" >
+<img id = 'fire' scr="images\fire.png" onclick="shootZombie()">
 
 <script>
 
-let score = 0;
-let audio = new Audio('C:/Users/18673/Documents/COMP1536/Zombie/images/Pain.wav')
+
+let score = 0; // set score to 0 
+
+let audio = new Audio('images\Pain.wav')
 
 function middle() {
     let inwidth = window.innerWidth;
@@ -37,6 +39,7 @@ function startZombieHunt() {
   
 }
 
+
 startZombieHunt(); 
 document.getElementById('reset').onclick = startZombieHunt; 
 
@@ -44,8 +47,9 @@ function shootZombie() {
     audio.play(); 
     score++; 
     trackScore.innerHTML = score.toString();
-    document.getElementById('greaserZombie').src = "C:/Users/18673/Documents/COMP1536/Zombie/images/fire.png";
+    document.getElementById('greaserZombie').src = "images/greaserZombie.png";
     setTimeout(randomMove, 800);
+
 }
 
 document.getElementById('greaserZombie').onclick = shootZombie; 
@@ -53,7 +57,7 @@ document.getElementById('greaserZombie').onclick = shootZombie;
 function randomMove() {
     let inwidth = window.innerWidth;
     let inheight = window.innerHeight;
-    document.getElementById('greaserZombie').src = "C:/Users/18673/Documents/COMP1536/Zombie/images/greaserZombie.png";
+    document.getElementById('greaserZombie').src = "images/greaserZombie.png";
     document.getElementById('greaserZombie').style.position = 'absolute'; 
     document.getElementById('greaserZombie').style.left = Math.random() * (inwidth - 200) +"px"; // account for zombie
     document.getElementById('greaserZombie').style.top = Math.random() * (inheight - 300) +"px";
