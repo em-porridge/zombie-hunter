@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css\style.css">   
+</head>
+<body>
+
+<div>
+    <h1> Zombie Hunter </h1> 
+    <h4> Score </h4><h4 id = 'trackScore'>0</h4>
+</div>
+
+<div id = 'reset'>
+    <p> Reset </p>
+</div>
+
+<img id = 'greaserZombie' src="images\greaserZombie.png" >
+<img id = 'fire' scr="images\fire.png" onclick="shootZombie()">
+
+<script>
+
+
+let score = 0; // set score to 0 
+
+let audio = new Audio('images\Pain.wav')
+
+function middle() {
+    let inwidth = window.innerWidth;
+    let inheight = window.innerHeight; 
+    document.getElementById('greaserZombie').style.left = (inwidth - 200) / 2 + 'px';
+    document.getElementById('greaserZombie').style.top = (inheight - 300) / 2 + 'px';
+}
+
+function startZombieHunt() {
+    middle();
+    score = 0; 
+    let trackScore = document.getElementById('trackScore'); 
+    trackScore.innerHTML = score.toString(); 
+  
+}
+
+
+startZombieHunt(); 
+document.getElementById('reset').onclick = startZombieHunt; 
+
+function shootZombie() {
+    audio.play(); 
+    score++; 
+    trackScore.innerHTML = score.toString();
+    document.getElementById('greaserZombie').src = "images/greaserZombie.png";
+    setTimeout(randomMove, 800);
+
+}
+
+document.getElementById('greaserZombie').onclick = shootZombie; 
+
+function randomMove() {
+    let inwidth = window.innerWidth;
+    let inheight = window.innerHeight;
+    document.getElementById('greaserZombie').src = "images/greaserZombie.png";
+    document.getElementById('greaserZombie').style.position = 'absolute'; 
+    document.getElementById('greaserZombie').style.left = Math.random() * (inwidth - 200) +"px"; // account for zombie
+    document.getElementById('greaserZombie').style.top = Math.random() * (inheight - 300) +"px";
+}
+
+setInterval(randomMove, 2000); // move zombie randomly
+
+</script>
+</body>
+</html>

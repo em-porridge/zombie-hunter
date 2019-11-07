@@ -1,0 +1,52 @@
+
+body {
+    background-color:black;
+}
+
+h1 {
+    color:darkred;
+    font-family: monospace;
+    text-align: center; 
+}
+
+h4 { 
+    color: white;
+    font-family: cursive;
+    text-align: center; 
+}
+
+p {
+    font-size: large; 
+    color: white;
+    background: darkolivegreen;
+    position: absolute;
+    top:75%;
+    left: 48%;
+    border: thick solid white;
+    border-radius: 100px;
+    padding: 20px;
+
+}
+
+button {
+    
+    color: red;
+    background-color: white;
+    position: fixed; 
+    bottom: 0;
+    left: 100;
+}
+
+
+
+img {
+  
+    height: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+#reset {
+    cursor: pointer;
+
+}
