@@ -6,7 +6,9 @@
 <body>
 <audio id='ouch'>
         <source src="image\Pain.wav" type="audio/mpeg">
+            audio not supported
 </audio>
+    
 <div>
     <h1> Zombie Hunter </h1> 
     <h4> Score </h4><h4 id = 'trackScore'>0</h4>
@@ -18,10 +20,7 @@
 
 <img id = 'greaserZombie' src="images\greaserZombie.png" >
 
-
 <script>
-
-
 let score = 0; // set score to 0 
 let audio = document.getElementById('ouch');
 let img = document.getElementById('greaserZombie').onclick = shootZombie; 
@@ -41,7 +40,6 @@ function startZombieHunt() {
     trackScore.innerHTML = score.toString(); 
 }
 
-
 startZombieHunt(); 
 document.getElementById('reset').onclick = startZombieHunt; 
 
@@ -58,7 +56,7 @@ function shootZombie() {
 }
     
 function onFire() {
-    audio.play(); 
+    audio.play();  
     score++; 
     trackScore.innerHTML = score.toString();
     document.getElementById('greaserZombie').src="images/fire.png";
